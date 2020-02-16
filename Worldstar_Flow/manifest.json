@@ -1,0 +1,36 @@
+/*
+
+Content Extensions, themes, and applications are simply bundles 
+of resources, wrapped up with a manifest.json file that describes the package's contents as this is named manifest.json
+*/
+
+{
+
+	"version": "1.0", /*Version number of chrome extension*/
+	"manifest_version": 2,/* Current version:'manifest_version': 2:*/
+	"name": "World Star Care Bear Flow",	/*name of chrome extension*/
+	"web_accessible_resources": [
+		"kittens/*.jpg"	
+
+		],
+/*content scripts" for chrome extensions. The content script is a 
+JavaScript file that runs in the context of a web page (and can be used to modify that page*/
+
+	"content_scripts": [{
+
+
+/*matches is an array, <all_urls> (run extension on all websites)*/			
+		
+		"matches": [
+
+/*Matches any URL that uses a permitted scheme. (*/			
+
+		"<all_urls>"
+		],		
+
+/*Link to JavaScript file, code that changes image of website page*/
+
+		"js": ["kitten.js"]
+		}]
+
+}
